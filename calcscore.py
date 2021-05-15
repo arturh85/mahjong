@@ -15,25 +15,27 @@
                     #pair für mahjongg
             else:
                 if group[0].typ == dragon:
-                    #drachenpaar
+                    #drachenpaar (2p)
+                if group[0].typ == wind:
+                    #windpaar, nur bei wind der runde oder platzwind (2p)
         elif group.len == 1:
             if group[0].typ == season:
-                #jahreszeit
+                #jahreszeit (4p)
                 
 
  def isPong(group):
 
     if group[0].typ == group[1].typ && group[1].typ == group[2].typ:
         if group[0].typ == wind:
-            return 8
+            return 4
         elif group[0].typ == dragon:
-            return 8
+            return 4
         elif group[0].typ != season:
             if group[0].num == group[1].num && group[1].num == group[2].num:
                 if group[0].num == 1 || group[0].num == 9:
-                    return 8
-                else
                     return 4
+                else
+                    return 2
     
     return -1
     
@@ -50,15 +52,15 @@
 
     if group[0].typ == group[1].typ && group[1].typ == group[2].typ && group[2].typ == group[3].typ:
         if group[0].typ == wind:
-            return 32
+            return 16
         elif group[0].typ == dragon:
-            return 32
+            return 16
         elif group[0].typ != season:
             if group[0].num == group[1].num && group[1].num == group[2].num:
                 if group[0].num == 1 || group[0].num == 9:
-                    return 32
-                else
                     return 16
+                else
+                    return 8
     
     return -1
     
