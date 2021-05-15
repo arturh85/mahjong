@@ -1,3 +1,6 @@
+#http://dmjl.de/wp-content/uploads/2009/05/DMJL_CC_Wertung_2005.pdf 
+ 
+ 
  def  calcscore(bricks, majongg = false):
  
     for group in bricks:
@@ -21,7 +24,24 @@
         elif group.len == 1:
             if group[0].typ == season:
                 #jahreszeit (4p)
-                
+         
+ def isCong(group):
+
+    if group[0].typ == group[1].typ && group[1].typ == group[2].typ && group[2].typ == group[3].typ:
+        if group[0].typ == wind:
+            return 16
+        elif group[0].typ == dragon:
+            return 16
+        elif group[0].typ != season:
+            if group[0].num == group[1].num && group[1].num == group[2].num:
+                if group[0].num == 1 || group[0].num == 9:
+                    return 16
+                else
+                    return 8
+    
+    return -1
+    
+           
 
  def isPong(group):
 
@@ -47,23 +67,6 @@
             if group[0].num == group[1].num - 1 && group[1].num == group[2].num - 1:
                 return 0
     return -1
-    
- def isCong(group):
-
-    if group[0].typ == group[1].typ && group[1].typ == group[2].typ && group[2].typ == group[3].typ:
-        if group[0].typ == wind:
-            return 16
-        elif group[0].typ == dragon:
-            return 16
-        elif group[0].typ != season:
-            if group[0].num == group[1].num && group[1].num == group[2].num:
-                if group[0].num == 1 || group[0].num == 9:
-                    return 16
-                else
-                    return 8
-    
-    return -1
-    
     
  def isPair(group):
 
