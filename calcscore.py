@@ -77,10 +77,7 @@
             return 2
         elif group[0].typ != season:
             if group[0].num == group[1].num && group[1].num == group[2].num:
-                if group[0].num == 1 || group[0].num == 9:
-                    return 0
-                else
-                    return 0
+                return 0
     
     return -1
     
